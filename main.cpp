@@ -1,9 +1,13 @@
 #include <iostream>
 
 int main() {
-    int x = 5;
-    int y = 10;
-    int sum = x + y;
-    std::cout << "Hello world!" << "\nSum = " << sum << std::endl;
+    int x{};
+    int y{};
+    std::cout << "Enter x: ";
+    std::cin >> x;
+    std::cout << "Enter y: ";
+    std::cin >> y;
+    const int sum = x + y;
+    std::cout << "Sum = " << sum << std::endl;
     return 0;
 }
