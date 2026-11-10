@@ -4,9 +4,9 @@ static void calculator(const int option) {
     double x{};
     double y{};
     double result{};
-    std::cout << "Введіть x: ";
+    std::cout << "Enter x: ";
     std::cin >> x;
-    std::cout << "Введіть y: ";
+    std::cout << "Enter y: ";
     std::cin >> y;
     if (option == 1) {
         result = x + y;
