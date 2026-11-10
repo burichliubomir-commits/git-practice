@@ -13,17 +13,21 @@ static double divide(const double a, const double b) {
     return a / b;
 }
 
+static void printMenu() {
+    std::cout << "1. Додавання\n"
+                  << "2. Віднімання\n"
+                  << "3. Множення\n"
+                  << "4. Ділення\n"
+                  << "0. Вихід з програми\n"
+                  << "Введіть номер операції: ";
+}
+
 int main() {
     double x{};
     double y{};
     int option{};
     do {
-        std::cout << "1. Додавання\n"
-                  << "2. Віднімання\n"
-                  << "3. Множення\n"
-                  << "4. Ділення\n"
-                  << "0. Вихід з програми\n";
-        std::cout << "Введіть номер операції: ";
+        printMenu();
         std::cin >> option;
         if (option != 0) {
             std::cout << "Enter x: ";
