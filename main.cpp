@@ -1,16 +1,26 @@
 #include <iostream>
 
-static double add(const double a, const double b) {
-    return a + b;
-}
-static double subtract(const double a, const double b) {
-    return a - b;
-}
-static double multiply(const double a, const double b) {
-    return a * b;
-}
-static double divide(const double a, const double b) {
-    return a / b;
+static void calculator(const int option) {
+    double x{};
+    double y{};
+    double result{};
+    std::cout << "Введіть x: ";
+    std::cin >> x;
+    std::cout << "Введіть y: ";
+    std::cin >> y;
+    if (option == 1) {
+        result = x + y;
+        std::cout << "Додавання: x + y = " << result << std::endl;
+    } else if (option == 2) {
+        result = x - y;
+        std::cout << "Віднімання: x - y = " << result << std::endl;
+    } else if (option == 3) {
+        result = x * y;
+        std::cout << "Множення: x * y = " << result << std::endl;
+    } else if (option == 4) {
+        result = x / y;
+        std::cout << "Ділення: x / y = " << result << std::endl;
+    }
 }
 
 int main() {
@@ -25,31 +35,12 @@ int main() {
                   << "0. Вихід з програми\n";
         std::cout << "Введіть номер операції: ";
         std::cin >> option;
-        if (option != 0) {
-            std::cout << "Enter x: ";
-            std::cin >> x;
-            std::cout << "Enter y: ";
-            std::cin >> y;
-        }
-        switch (option) {
-            case 1:
-                std::cout << "Додавання: x + y = " << add(x, y) << std::endl;
-                break;
-            case 2:
-                std::cout << "Віднімання: x - y = " << subtract(x, y) << std::endl;
-                break;
-            case 3:
-                std::cout << "Множення: x * y = " << multiply(x, y) << std::endl;
-                break;
-            case 4:
-                std::cout << "Ділення: x / y = " << divide(x, y) << std::endl;
-                break;
-            case 0:
-                std::cout << "Роботу програми завершено.";
-                return 0;
-            default:
-                std::cout << "Введіть корректний номер операції.";
-                break;
+        if (option > 0 && option <= 4) {
+            calculator(option);
+        } else if ( option == 0 ) {
+            std::cout << "Роботу програми завершено.";
+        } else {
+            std::cout << "Введіть корректний номер операції." << std::endl;
         }
     } while (option != 0);
     return 0;
