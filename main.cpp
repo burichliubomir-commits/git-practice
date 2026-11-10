@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 static void calculator(const int option) {
     double x{};
@@ -23,8 +24,9 @@ static void calculator(const int option) {
     }
 }
 
-static void printMenu() {
-    std::cout << "1. Додавання\n"
+static void printMenu(const std::string& welcomeMessage) {
+    std::cout << welcomeMessage
+                  << "\n1. Додавання\n"
                   << "2. Віднімання\n"
                   << "3. Множення\n"
                   << "4. Ділення\n"
@@ -33,11 +35,10 @@ static void printMenu() {
 }
 
 int main() {
-    double x{};
-    double y{};
+    const std::string welcomeMessage = "Ласкаво просимо!";
     int option{};
     do {
-        printMenu();
+        printMenu(welcomeMessage);
         std::cin >> option;
         if (option > 0 && option <= 4) {
             calculator(option);
